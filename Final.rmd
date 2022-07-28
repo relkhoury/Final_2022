@@ -54,7 +54,7 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-
+Generating a barplot via ggplot for the data involving the incidence of MALES with COVID-19, along with whether or not they were treated with the vaccine, shows that, though a higher frequency of persons didn't get COVID-19 at all, most of those who did had taken the placebo.  Around 67% of males who contracted COVID-19 had taken the placebo, compared to only about 33% of males who had gotten the disease.  However, more testing is required to ensure such results are statistically significant.  
 
 
 
