@@ -38,7 +38,7 @@ DrugUsers <- filter(FinalData, DrugUser == "yes")
 
 ### Descriptive Results
 
-
+#### Graphical Results
 ```{r}
 dd2 <- Males %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
@@ -57,19 +57,25 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 Generating a barplot via ggplot for the data involving the incidence of MALES with COVID-19, along with whether or not they were treated with the vaccine, shows that, though a higher frequency of persons didn't get COVID-19 at all, most of those who did had taken the placebo.  Around 67% of males who contracted COVID-19 had taken the placebo, compared to only about 33% of males who had gotten the disease.  However, more testing is required to ensure such results are statistically significant.  
 
 
-
-
-
-#### Graphical Results
-
-
-
-
 #### Numerical Results
+```{r}
+table1 <- xtabs(~treatment + infected, data=Males)
+rowPerc(table1)
+colPerc(table1)
+```
+Our numerical results corroborate the graphical descriptive results created above; we can see that, among Males who got COVID-19, 67.78% of them had taken the placebo, as compared to 32.22% of males who had gotten the vaccine.  While a majority of males didn't get COVID-19 at all, 2.63% of those men who received the placebo got the virus, as compared to only 1.28% of males who got the vaccine.  This further supports the notion that the vaccine aids in protection against the vaccine, but inferential results are required. 
 
 
 
 ### Inferential Results
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+
 
 
 
