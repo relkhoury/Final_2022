@@ -84,7 +84,7 @@ Multiple data points generated from our Chi-Square and Fisher Exact tests lend c
 
 ### Efficacy of Vaccine for Males
 ```{r}
-MaleEfficacy <- ((2.092161)/(1 + 2.092161) * 100)
+MaleEfficacy <- malefisher$estimate/(1 + malefisher$estimate) * 100
 malefisherlow <- malefisher$conf.int[1]
 malefisherhigh <- malefisher$conf.int[2]
 EfficacyMalesLow <- ((malefisherlow)/(1 + malefisherlow) * 100)
