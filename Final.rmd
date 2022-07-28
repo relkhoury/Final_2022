@@ -72,16 +72,21 @@ Our numerical results corroborate the graphical descriptive results created abov
 chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
+malefisher <- fisher.test(table1)
+malefisher
 ```
-Multiple data points generated from our Chi-Square and Fisher Exact tests lend credibilty to our earlier tests.  The observed counts from the Chi-Square test show convey that over 100 more males who got the placebo ended up getting COVID-19, as compared to their vaccinated fellows.  Our odds ratio is 2.09, implying that males who get placebo-based treatment are 2.09 times as likely to get COVID-19 as compared to their vaccinated counterparts.  Furthermore, our p-value is infinitesimal (4.812e-11); such a small value suggests our results are statstically significant.  
-
-
+Multiple data points generated from our Chi-Square and Fisher Exact tests lend credibilty to our earlier tests.  The observed counts from the Chi-Square test show convey that over 100 more males who got the placebo ended up getting COVID-19, as compared to their vaccinated fellows.  Our odds ratio is 2.09, implying that males who get placebo-based treatment are 2.09 times as likely to get COVID-19 as compared to their vaccinated counterparts.  Furthermore, our p-value is infinitesimal (4.812e-11); such a small value suggests our results are statistically significant.  
 
 
 
 
 
 ### Efficacy of Vaccine for Males
+```{r}
+MaleEfficacy <- ((2.092161)/(1 + 2.092161) * 100)
+MaleEfficacy
+```
+
 
 
 
