@@ -148,7 +148,7 @@ Femalefisherhigh <- femalefisher$conf.int[2]
 EfficacyFemalesLow <- ((Femalefisherlow)/(1 + Femalefisherlow) * 100)
 EfficacyFemalesHigh <- ((Femalefisherhigh)/(1 + Femalefisherhigh) * 100)
 ```
-The estimated efficacy of the vaccine among male patients is `r FemaleEfficacy`%.  The 95% confidence interval for the efficacy of the vaccine pertaining to males is `r EfficacyFemalesLow`% to `r EfficacyFemalesHigh`%.
+The estimated efficacy of the vaccine among male patients is `r FemaleEfficacy`%.  The 95% confidence interval for the efficacy of the vaccine pertaining to females is `r EfficacyFemalesLow`% to `r EfficacyFemalesHigh`%.
 
 
 ## LGBTQ
@@ -194,7 +194,14 @@ LGBTQfisher
 
 
 ### Efficacy of Vaccine for Males
-
+```{r}
+LGBTQEfficacy <- LGBTQfisher$estimate/(1 + LGBTQfisher$estimate) * 100
+LGBTQfisherlow <- LGBTQfisher$conf.int[1]
+LGBTQfisherhigh <- LGBTQfisher$conf.int[2]
+EfficacyLGBTQLow <- ((LGBTQfisherlow)/(1 + LGBTQfisherlow) * 100)
+EfficacyLGBTQHigh <- ((LGBTQfisherhigh)/(1 + LGBTQfisherhigh) * 100)
+```
+The estimated efficacy of the vaccine among male patients is `r LGBTQEfficacy`%.  The 95% confidence interval for the efficacy of the vaccine pertaining to LGBTQ members is `r EfficacyLGBTQLow`% to `r EfficacyLGBTQHigh`%.
 
 
 
@@ -205,21 +212,51 @@ LGBTQfisher
 
 
 #### Graphical Results
+```{r}
+dd5 <- DrugUsers %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
+
+# the group_by followed by summarize(count=n())
+
+basicE <- ggplot(dd5,aes(x=infected,y=count,fill=treatment))
+basicE + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicEE <- ggplot(dd5,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicEE + geom_bar(stat="identity", position = "dodge")
+```
 
 
 
 #### Numerical Results
-
+```{r}
+table4 <- xtabs(~treatment + infected, data=DrugUsers)
+rowPerc(table4)
+colPerc(table4)
+```
 
 
 ### Inferential Results
-
+```{r}
+chisq.test(table4)
+chisqtestGC(table4)
+fisher.test(table4)
+DrugUserFisher <- fisher.test(table4)
+DrugUserFisher
+```
 
 
 
 ### Efficacy of Vaccine for Males
-
+```{r}
+DrugUserEfficacy <- DrugUserFisher$estimate/(1 + DrugUserFisher$estimate) * 100
+DrugUserfisherlow <- DrugUserFisher$conf.int[1]
+DrugUserfisherhigh <- DrugUserFisher$conf.int[2]
+EfficacyDrugUserLow <- ((DrugUserfisherlow)/(1 + DrugUserfisherlow) * 100)
+EfficacyDrugUserHigh <- ((DrugUserfisherhigh)/(1 + DrugUserfisherhigh) * 100)
+```
+The estimated efficacy of the vaccine among male patients is `r DrugUserEfficacy`%.  The 95% confidence interval for the efficacy of the vaccine pertaining to drug users is `r EfficacyDrugUserLow`% to `r EfficacyDrugUserHigh`%.
 
 
 
