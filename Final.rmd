@@ -120,6 +120,15 @@ Analyzing the bar-plots pertaining to the female COVID-19 infection rate, along 
 
 #### Numerical Results
 
+```{r}
+table2 <- xtabs(~treatment + infected, data=Females)
+rowPerc(table2)
+colPerc(table2)
+```
+
+
+
+
 
 
 ### Inferential Results
@@ -127,7 +136,13 @@ Analyzing the bar-plots pertaining to the female COVID-19 infection rate, along 
 
 
 
-### Efficacy of Vaccine for Males
+
+
+
+
+### Efficacy of Vaccine for Females
+
+
 
 
 
