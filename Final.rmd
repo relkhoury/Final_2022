@@ -183,7 +183,13 @@ colPerc(table3)
 
 
 ### Inferential Results
-
+```{r}
+chisq.test(table3)
+chisqtestGC(table3)
+fisher.test(table3)
+LGBTQfisher <- fisher.test(table3)
+LGBTQfisher
+```
 
 
 
