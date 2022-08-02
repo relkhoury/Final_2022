@@ -116,8 +116,7 @@ basicGG <- ggplot(dd3,aes(x=infected,y=prcnt*100,fill=treatment))
 basicGG + geom_bar(stat="identity", position = "dodge")
 ```
 
-
-
+Analyzing the bar-plots pertaining to the female COVID-19 infection rate, along with their vaccination status (having received a bonafide vaccine or the placebo) yields results that somewhat mirror those of the male cases.  Our frequency-based bar-plot exhibits that, although most participants did not contract COVID-19 at all, a larger count of those who did seemed to have taken the placebo.  Shifting focus to the proportion-based bar=plot, a strong majority (nearly 60%) of COVID-19 positive cases had taken the placebo, while a lesser minority had taken the vaccine.  Additional numerical and inferential results are necessary to come to a final conclusion on these results.
 
 #### Numerical Results
 
