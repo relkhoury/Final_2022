@@ -128,9 +128,6 @@ colPerc(table2)
 Viewing our data from a tabular lens further justifies the earlier graphical results investigated; clearly, an immense majority of female persons didn't get COVID-19 at all (note: data displays in whole numbers because of options(digits = 1) command), but a majority of those who did (59%) had taken the placebo instead of the vaccine (41%).  As with the male data, there is mounting evidence that those who received the vaccine may be notably protected against COVID-19 infection, but legitimate inferential test is required to validate this.  
 
 
-
-
-
 ### Inferential Results
 
 
