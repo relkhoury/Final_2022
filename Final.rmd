@@ -97,19 +97,24 @@ The estimated efficacy of the vaccine among male patients is `r MaleEfficacy`%. 
 
 ## Females
 
-
-
-
 ### Descriptive Results
-
-
-
-
 
 #### Graphical Results
 
+```{r}
+dd3 <- Females %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
+# the group_by followed by summarize(count=n())
+
+basicG <- ggplot(dd3,aes(x=infected,y=count,fill=treatment))
+basicG + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicGG <- ggplot(dd3,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicGG + geom_bar(stat="identity", position = "dodge")
+```
 
 
 
