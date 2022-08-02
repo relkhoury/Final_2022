@@ -18,7 +18,7 @@ FinalDat <-read.csv(file="final_Data.csv",header=TRUE)
 FinalData <- FinalDat  %>% select(-one_of("X"))
 FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
-options(digits = 1)
+options(digits = 2)
 ```
 
 # Introduction
@@ -64,7 +64,7 @@ table1 <- xtabs(~treatment + infected, data=Males)
 rowPerc(table1)
 colPerc(table1)
 ```
-Our numerical results corroborate the graphical descriptive results created above; we can see that, among Males who got COVID-19, 67.78% of them had taken the placebo, as compared to 32.22% of males who had gotten the vaccine.  While a majority of males didn't get COVID-19 at all, 2.63% of those men who received the placebo got the virus, as compared to only 1.28% of males who got the vaccine.  This further supports the notion that the vaccine aids in protection against the vaccine, but inferential results are required. 
+Our numerical results corroborate the graphical descriptive results created above; we can see that, among Males who got COVID-19, 68% of them had taken the placebo, as compared to 32% of males who had gotten the vaccine.  While a majority of males didn't get COVID-19 at all, 3% of those men who received the placebo got the virus, as compared to only 1% of males who got the vaccine.  This further supports the notion that the vaccine aids in protection against the vaccine, but inferential results are required. 
 
 
 
@@ -76,7 +76,7 @@ fisher.test(table1)
 malefisher <- fisher.test(table1)
 malefisher
 ```
-Multiple data points generated from our Chi-Square and Fisher Exact tests lend credibilty to our earlier tests.  The observed counts from the Chi-Square test show convey that over 100 more males who got the placebo ended up getting COVID-19, as compared to their vaccinated fellows.  Our odds ratio is 2.09, implying that males who get placebo-based treatment are 2.09 times as likely to get COVID-19 as compared to their vaccinated counterparts.  Furthermore, our p-value is infinitesimal (4.812e-11); such a small value suggests our results are statistically significant.  
+Multiple data points generated from our Chi-Square and Fisher Exact tests lend credibility to our earlier tests.  The observed counts from the Chi-Square test show convey that over 100 more males who got the placebo ended up getting COVID-19, as compared to their vaccinated fellows.  Our odds ratio is 2.1, implying that males who get placebo-based treatment are 2.1 times as likely to get COVID-19 as compared to their vaccinated counterparts.  Furthermore, our p-value is infinitesimal, and such a small value suggests our results are statistically significant.  
 
 
 
@@ -130,7 +130,13 @@ Viewing our data from a tabular lens further justifies the earlier graphical res
 
 ### Inferential Results
 
-
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+femalefisher <- fisher.test(table2)
+femalefisher
+```
 
 
 
