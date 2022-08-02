@@ -140,14 +140,15 @@ femalefisher
 Running our Chi-Square and FisherExact tests confirm our earlier established assumptions about the female COVID-19 statistics collected.  Our observed counts indicate that 64 more females who took the placebo contracted COVID-19, as compared to females who genuinely been inoculated.  Our odds ratio was calculated to be 1.4; this can be interpreted as that those females who only took the placebo have a 1.4 times higher chance of contracting COVID-19, compared to their vaccinated counterparts.  Furthermore, our p-value computation is essentially zero, affirming that our results are statistically significant.  
 
 
-
-
-
 ### Efficacy of Vaccine for Females
-
-
-
-
+```{r}
+FemaleEfficacy <- femalefisher$estimate/(1 + femalefisher$estimate) * 100
+Femalefisherlow <- femalefisher$conf.int[1]
+Femalefisherhigh <- femalefisher$conf.int[2]
+EfficacyFemalesLow <- ((Femalefisherlow)/(1 + Femalefisherlow) * 100)
+EfficacyFemalesHigh <- ((Femalefisherhigh)/(1 + Femalefisherhigh) * 100)
+```
+The estimated efficacy of the vaccine among male patients is `r FemaleEfficacy`%.  The 95% confidence interval for the efficacy of the vaccine pertaining to males is `r EfficacyFemalesLow`% to `r EfficacyFemalesHigh`%.
 
 
 ## LGBTQ
