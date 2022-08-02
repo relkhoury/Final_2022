@@ -181,7 +181,7 @@ table3 <- xtabs(~treatment + infected, data=LGBTQ)
 rowPerc(table3)
 colPerc(table3)
 ```
-
+The numerical results created, illustrated via the above table, further the prior graphs generated in relation to the LGBTQ persons studied in the trial.  Although about half of the LGBTQ participants were not infected with COVID-19 at all, a larger proportion (3.43%) were reported to have taken the vaccine.  Of the people who WERE infected with COVID-19, though, a considerable 87% had received the vaccine; this further progresses the possibilty that the vaccine offers no considerable immunity to members of the LGBTQ communnity, but further inferential testing is required to validate this.  
 
 ### Inferential Results
 ```{r}
@@ -194,7 +194,7 @@ LGBTQfisher
 
 
 
-### Efficacy of Vaccine for Males
+### Efficacy of Vaccine for LGBTQ Group
 ```{r}
 LGBTQEfficacy <- LGBTQfisher$estimate/(1 + LGBTQfisher$estimate) * 100
 LGBTQfisherlow <- LGBTQfisher$conf.int[1]
