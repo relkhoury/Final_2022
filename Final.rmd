@@ -21,6 +21,7 @@ mutate(across(where(is.character), as.factor))
 options(digits = 2)
 ```
 
+
 # Introduction
 
 A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
@@ -171,7 +172,7 @@ basicD + geom_bar(stat="identity",position="dodge")
 basicDD <- ggplot(dd4,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicDD + geom_bar(stat="identity", position = "dodge")
 ```
-
+Studying the above generated graph provides a stark contrast  between LGBTQ infection data as compared to the earlier male and female results.  It seems that only half of either LGBTQ group (both those who received the vaccine and the placebo) remained healthy, but, among those who got COVID-19, an astounding ~85% of those cases had gotten the vaccine, compared to a meager 15% of placebo recipients.  While additional testing is necessary to corroborate these graphs, an early assessment suggests that the COVID-19 vaccine does NOT provide protection for members of the LGBTQ community.  
 
 
 #### Numerical Results
@@ -248,7 +249,7 @@ DrugUserFisher
 
 
 
-### Efficacy of Vaccine for Males
+### Efficacy of Vaccine for Druggies 
 ```{r}
 DrugUserEfficacy <- DrugUserFisher$estimate/(1 + DrugUserFisher$estimate) * 100
 DrugUserfisherlow <- DrugUserFisher$conf.int[1]
