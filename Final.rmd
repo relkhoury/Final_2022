@@ -181,7 +181,7 @@ table3 <- xtabs(~treatment + infected, data=LGBTQ)
 rowPerc(table3)
 colPerc(table3)
 ```
-The numerical results created, illustrated via the above table, further the prior graphs generated in relation to the LGBTQ persons studied in the trial.  Although about half of the LGBTQ participants were not infected with COVID-19 at all, a larger proportion (3.43%) were reported to have taken the vaccine.  Of the people who WERE infected with COVID-19, though, a considerable 87% had received the vaccine; this further progresses the possibilty that the vaccine offers no considerable immunity to members of the LGBTQ communnity, but further inferential testing is required to validate this.  
+The numerical results created, illustrated via the above table, further the messaging of the prior graphs generated in relation to the LGBTQ persons studied within the trial.  Although about half of the LGBTQ participants were not infected with COVID-19 at all, a larger proportion (3.43%) were reported to have taken the vaccine.  Of the people who WERE infected with COVID-19, though, a considerable 87% had received the vaccine; this further progresses the possibility that the vaccine offers no considerable immunity to members of the LGBTQ community, but further inferential testing is required to validate this.  
 
 ### Inferential Results
 ```{r}
@@ -189,9 +189,8 @@ chisq.test(table3)
 chisqtestGC(table3)
 fisher.test(table3)
 LGBTQfisher <- fisher.test(table3)
-LGBTQfisher
 ```
-
+Running the necessary inferential tests confirm our previously held assumptions about COVIVD-19 and vaccine efficacy as it relates to the LGBTQ members of this study.  Our observed counts show that 52 LGBTQ members who took the vaccine ended up getting COVID-19, compared to a relatively minuscule 8 members who had taken the placebo.  Our p-values for the Chi-Square (1e-08) and FisherExact (2e-09) are so little they're essentially zero; such magnitude itself points to a degree of statistical significance in our data.  Finally, the odds ratio was calculated to be .15, which can be understood to assert that for every 1 LGBTQ person who receives the vaccine and gets COVID-19, there are .15 odds of the same happening to an LGBTQ person getting the placebo and contracting COVID-19.  As such, it seems that the vaccine provides no efficacious protection against COVID-19 for members of the LGBTQ community.  
 
 
 ### Efficacy of Vaccine for LGBTQ Group
