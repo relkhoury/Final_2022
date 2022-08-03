@@ -235,7 +235,7 @@ table4 <- xtabs(~treatment + infected, data=DrugUsers)
 rowPerc(table4)
 colPerc(table4)
 ```
-Our numerical results fortify the earlier GGPlot graphs created in that they're numerically corroborative.  For Drug Users who either got the placebo or vaccine, a majority remained health (99.4% and 96.7%, respectively).  However, our second table indicates that 85% of those who became COVID-19 positive had taken the vaccine; this pales in comparison to the 15% who had recevied the placebo.  Our tabular outputs, though they require further backing from our Chi-Square and Fisher Exact results, seem to also direct towards a lack of efficacy on the part of this COVID-19 vaccine, particularly among Drug Users.  
+Our numerical results fortify the earlier GGPlot graphs created in that they're numerically corroborative.  For Drug Users who either got the placebo or vaccine, a majority remained health (99.4% and 96.7%, respectively).  However, our second table indicates that 85% of those who became COVID-19 positive had taken the vaccine; this pales in comparison to the 15% who had received the placebo.  Our tabular outputs, though they require further backing from our Chi-Square and Fisher Exact results, seem to also direct towards a lack of efficacy on the part of this COVID-19 vaccine, particularly among Drug Users.  
 
 ### Inferential Results
 ```{r}
@@ -243,9 +243,8 @@ chisq.test(table4)
 chisqtestGC(table4)
 fisher.test(table4)
 DrugUserFisher <- fisher.test(table4)
-DrugUserFisher
 ```
-
+As with the previous inferential tests, our Chi-Square and FisherExact results confer a sense of legitimacy about our data.  When we examine our observed counts in the Chi-Square test, we can see that 9 only Drug Users who contracted COVID-19 had received the placebo, compared to an astounding 51 users who were administered the vaccine.  These numbers rationalize the graphical and tabular data we explored earlier.  To add, our p-values for both the Chi-Square and Fisher Exact tests are essentially zero, so we can approach our data with a confident sense of statistical significance.  Our odds ratio was computed to be .18, close to our odds ratio in our inferential testing for LGBTQ members of this study (.15).  This statistic can simply be interpreted to say for every Drug User that contracts COVID-19 while having taken the vaccine, the odds of a Drug User contracting COVID-19 while having received a placebo are only .18 of the former.  As such, we can claim that our data/results are valid in their statements, and can conclude that the COVID-19 vaccine does not offer excellent immunity against COVID-19 for Drug Users.  
 
 
 ### Efficacy of Vaccine for Druggies 
