@@ -235,7 +235,7 @@ table4 <- xtabs(~treatment + infected, data=DrugUsers)
 rowPerc(table4)
 colPerc(table4)
 ```
-
+Our numerical results fortify the earlier GGPlot graphs created in that they're numerically corroborative.  For Drug Users who either got the placebo or vaccine, a majority remained health (99.4% and 96.7%, respectively).  However, our second table indicates that 85% of those who became COVID-19 positive had taken the vaccine; this pales in comparison to the 15% who had recevied the placebo.  Our tabular outputs, though they require further backing from our Chi-Square and Fisher Exact results, seem to also direct towards a lack of efficacy on the part of this COVID-19 vaccine, particularly among Drug Users.  
 
 ### Inferential Results
 ```{r}
