@@ -172,7 +172,7 @@ basicD + geom_bar(stat="identity",position="dodge")
 basicDD <- ggplot(dd4,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicDD + geom_bar(stat="identity", position = "dodge")
 ```
-Studying the above generated graph provides a stark contrast  between LGBTQ infection data as compared to the earlier male and female results.  It seems that only half of either LGBTQ group (both those who received the vaccine and the placebo) remained healthy, but, among those who got COVID-19, an astounding ~85% of those cases had gotten the vaccine, compared to a meager 15% of placebo recipients.  While additional testing is necessary to corroborate these graphs, an early assessment suggests that the COVID-19 vaccine does NOT provide protection for members of the LGBTQ community.  
+Studying the above generated graph provides a stark contrast  between LGBTQ infection data as compared to the earlier male and female results.  It seems that that while the majority of either LGBTQ group (both those who received the vaccine and the placebo) remained healthy, it seems that, of those who got COVID-19, an astounding ~85% of those cases had gotten the vaccine, compared to a meager 15% of placebo recipients.  While additional testing is necessary to corroborate these graphs, an early assessment suggests that the COVID-19 vaccine does NOT provide protection for members of the LGBTQ community.  
 
 
 #### Numerical Results
@@ -226,7 +226,7 @@ basicE + geom_bar(stat="identity",position="dodge")
 basicEE <- ggplot(dd5,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicEE + geom_bar(stat="identity", position = "dodge")
 ```
-
+In running our graphical analysis of the statistics concerning treatment type and COVID-19 infection status among Drug Users in the study, our results seem to align closely with the outputs generated for LGBTQ participants.  While the essential majority of both groups of drug users seemed not to contract the disease, approximately 84% of those who were infected seemed to have received the vaccine, as compared to 16% of placebo recipients.  Without numerical and inferential testing, no final conclusions can be made, but it appears that, as with the case of the LGBTQ contributors, this COVID-19 vaccine does not readily provide immunity to persons who may be classified as Drug Users.  
 
 
 #### Numerical Results
