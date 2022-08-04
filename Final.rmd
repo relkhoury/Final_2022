@@ -75,7 +75,6 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 malefisher <- fisher.test(table1)
-malefisher
 ```
 Multiple data points generated from our Chi-Square and Fisher Exact tests lend credibility to our earlier tests.  The observed counts from the Chi-Square test show convey that over 100 more males who got the placebo ended up getting COVID-19, as compared to their vaccinated fellows.  Our odds ratio is 2.1, implying that males who get placebo-based treatment are 2.1 times as likely to get COVID-19 as compared to their vaccinated counterparts.  Furthermore, our p-value is infinitesimal, and such a small value suggests our results are statistically significant.  
 
@@ -136,7 +135,6 @@ chisq.test(table2)
 chisqtestGC(table2)
 fisher.test(table2)
 femalefisher <- fisher.test(table2)
-femalefisher
 ```
 Running our Chi-Square and FisherExact tests confirm our earlier established assumptions about the female COVID-19 statistics collected.  Our observed counts indicate that 64 more females who took the placebo contracted COVID-19, as compared to females who genuinely been inoculated.  Our odds ratio was calculated to be 1.4; this can be interpreted as that those females who only took the placebo have a 1.4 times higher chance of contracting COVID-19, compared to their vaccinated counterparts.  Furthermore, our p-value computation is essentially zero, affirming that our results are statistically significant.  
 
@@ -172,6 +170,7 @@ basicD + geom_bar(stat="identity",position="dodge")
 basicDD <- ggplot(dd4,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicDD + geom_bar(stat="identity", position = "dodge")
 ```
+
 Studying the above generated graph provides a stark contrast  between LGBTQ infection data as compared to the earlier male and female results.  It seems that that while the majority of either LGBTQ group (both those who received the vaccine and the placebo) remained healthy, it seems that, of those who got COVID-19, an astounding ~85% of those cases had gotten the vaccine, compared to a meager 15% of placebo recipients.  While additional testing is necessary to corroborate these graphs, an early assessment suggests that the COVID-19 vaccine does NOT provide protection for members of the LGBTQ community.  
 
 
@@ -226,6 +225,7 @@ basicE + geom_bar(stat="identity",position="dodge")
 basicEE <- ggplot(dd5,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicEE + geom_bar(stat="identity", position = "dodge")
 ```
+
 In running our graphical analysis of the statistics concerning treatment type and COVID-19 infection status among Drug Users in the study, our results seem to align closely with the outputs generated for LGBTQ participants.  While the essential majority of both groups of drug users seemed not to contract the disease, approximately 84% of those who were infected seemed to have received the vaccine, as compared to 16% of placebo recipients.  Without numerical and inferential testing, no final conclusions can be made, but it appears that, as with the case of the LGBTQ contributors, this COVID-19 vaccine does not readily provide immunity to persons who may be classified as Drug Users.  
 
 
@@ -244,6 +244,7 @@ chisqtestGC(table4)
 fisher.test(table4)
 DrugUserFisher <- fisher.test(table4)
 ```
+
 As with the previous inferential tests, our Chi-Square and FisherExact results confer a sense of legitimacy about our data.  When we examine our observed counts in the Chi-Square test, we can see that 9 only Drug Users who contracted COVID-19 had received the placebo, compared to an astounding 51 users who were administered the vaccine.  These numbers rationalize the graphical and tabular data we explored earlier.  To add, our p-values for both the Chi-Square and Fisher Exact tests are essentially zero, so we can approach our data with a confident sense of statistical significance.  Our odds ratio was computed to be .18, close to our odds ratio in our inferential testing for LGBTQ members of this study (.15).  This statistic can simply be interpreted to say for every Drug User that contracts COVID-19 while having taken the vaccine, the odds of a Drug User contracting COVID-19 while having received a placebo are only .18 of the former.  As such, we can claim that our data/results are valid in their statements, and can conclude that the COVID-19 vaccine does not offer excellent immunity against COVID-19 for Drug Users.  
 
 
@@ -257,7 +258,11 @@ EfficacyDrugUserHigh <- ((DrugUserfisherhigh)/(1 + DrugUserfisherhigh) * 100)
 ```
 The estimated efficacy of the vaccine among male patients is `r DrugUserEfficacy`%.  The 95% confidence interval for the efficacy of the vaccine pertaining to drug users is `r EfficacyDrugUserLow`% to `r EfficacyDrugUserHigh`%.
 
+# Conclusion, Discussion
+By amassing and analyzing a wealth of graphical, numerical, and inferential results, we can make an informed judgement on the efficacy of the COVID-19 vaccine in question, among males, females, LGBTQ people, and Drug Users.  Comparing our data among these groups shows great variation in whether or not the vaccine was effective in providing immunity.  We define an effective vaccine as one that provides 50% or more efficacy.  For males, our efficacy was estimated to be at around 67.66%, with a 95% confidence interval ranging from 62.51% to 72.51%.  Such a finding, along with our statistically significant results (see "Males") proves that the vaccine is indeed efficacious in preventing COVID-19 among males.  Such an argument can also be made for the females in the study; the efficacy estimate was computed to be around 58.83%, along with a 95% confidence interval from 53.5% to 64.01%.  It can be argued that, while the vaccine is less efficacious for women, there remains a degree of protection, and thus can still be recommended for defense against COVID-19.
 
+However, cumulatively examining our data for the LGBTQ and Drug-Using participants in our study suggests the vaccine may not have been so valuable across all groups.  Our descriptive and inferential results for LGBTQ members of the study pointed towards little to no benefit with taking the vaccine against the placebo, and our efficacy data reflected this: the efficacy estimation among LGBTQ participants was around 12.78%, with a 95% confidence interval range of around 5.65% to 23.78%.  This is relatively poor compared to our efficacy yields among the males and females whose treatment options and infection statuses were recorded.  A similar outlook prevails for the observations relating to Drug Users, as their efficacy estimate was recorded at about 15.07%, along with a 95% confidence interval running from 7.11% to 26.78%.  Along with the latter data on LGBTQ members of the study, it's clear that the vaccine doesn't offer clear, substantial protection against COVID-19 for Drug Users, either.  
 
+If we were to advise on the authorization or administration of this vaccine, our data has made it abundantly clear that it doesn't offer tangible results to every population group.  Inoculations may be more valuable for males and females, since they might provide up to 72.51% efficacy (for the former, with 64.01% for the latter).  However, a board contemplating whether or not to authorize this COVID-19 vaccine for the masses ought to reconsider promoting it to members of the LGBTQ or Drug-Using community, since efficacy levels are so low (12.78% and 15.07%, respectively) treatment with this product might be considered redundant.  To engineer a vaccine that better protects ALL demographics from COVID-19, the creators of this treatment should reexamine the ingredients and processes employed, and begin work again.  
 
 
