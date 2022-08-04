@@ -24,7 +24,7 @@ options(digits = 2)
 
 # Introduction
 
-A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
+A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.  
 
 
 ### Methods, Variable Classifications 
@@ -35,7 +35,7 @@ LGBTQ <- filter(FinalData, LGBTQ == "gay")
 DrugUsers <- filter(FinalData, DrugUser == "yes")
 ```
 
-To make sense of our data with the following classifications, we will be running a series of tests and making observations per our outputs.  For each subset of data, we will be evaluating our data descriptively by generating plots (through GGplot) and tables (through the xtabs() command), to better illustrate the observations collected.  However, we'll also run a series of inferential tests (Chi-Square and FisherExact tests, primarily) to determine the statistical significance of our data, and makes inferences about our results.  Using some of the statistics from our FisherExact tests, we can generate our efficacy as a percentage, through manipulation of the odds formula derived in class (p/1+p).  We'll also take the lower and upper bounds from our FisherExact-generated confidence interval (set to 95% in R by default) and apply those values to the referenced formula, thus creating a 95% confidence interval for the range of true efficacy in the population.   
+To make sense of our data with the following classifications, we will be running a series of tests and making observations per our outputs.  For each subset of data, we will be evaluating our data descriptively by generating plots (through GGplot) and tables (through the xtabs() command), to better illustrate the observations collected.  However, we'll also run a series of inferential tests (Chi-Square and FisherExact tests, primarily) to determine the statistical significance of our data, and makes inferences about our results.  Using some of the statistics from our FisherExact tests, we can generate our efficacy as a percentage, through manipulation of the odds formula derived in class (p/1+p).  We'll also take the lower and upper bounds from our FisherExact-generated confidence interval (set to 95% in R by default) and apply those values to the referenced formula, thus creating a 95% confidence interval for the range of true efficacy in the population.  
 
 
 ## Males
@@ -229,7 +229,7 @@ basicEE <- ggplot(dd5,aes(x=infected,y=prcnt*100,fill=treatment))
 basicEE + geom_bar(stat="identity", position = "dodge")
 ```
 
-In running our graphical analysis of the statistics concerning treatment type and COVID-19 infection status among Drug Users in the study, our results seem to align closely with the outputs generated for LGBTQ participants.  While the essential majority of both groups of drug users seemed not to contract the disease, approximately 84% of those who were infected seemed to have received the vaccine, as compared to 16% of placebo recipients.  Without numerical and inferential testing, no final conclusions can be made, but it appears that, as with the case of the LGBTQ contributors, this COVID-19 vaccine does not readily provide immunity to persons who may be classified as Drug Users.  
+In running our graphical analysis of the statistics concerning treatment type and COVID-19 infection status among Drug Users in the study, our results seem to align closely with the outputs generated for LGBTQ participants.  While the essential majority of both groups of drug users seemed not to contract the disease, approximately 84% of those who were infected seemed to have received the vaccine, as compared to 16% of placebo recipients.  Without numerical and inferential testing, no final conclusions can be made, but it appears that, as with the case of the LGBTQ contributors, this COVID-19 vaccine does not readily provide immunity to persons who may be classified as Drug Users.   
 
 
 #### Numerical Results
